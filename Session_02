@@ -1,0 +1,61 @@
+#########
+#R for Noobs 
+#Session 2
+#######
+
+# reading in real data
+hab_counts<-read.csv("Data/HabitatConfig_counts.csv",header=T)
+
+#first 6 lines of data
+head(hab_counts)
+
+#last 6 lines of data
+tail(hab_counts)
+
+#structure of the data
+str(hab_counts)
+
+#names of columns (variables)
+names(hab_counts)
+
+#num rows
+nrow(hab_counts)
+
+#num col
+ncol(hab_counts)
+
+#length
+length(hab_counts)
+
+#summary
+summary(hab_counts)
+
+
+###############
+#SUBSETTING
+#############
+
+#get column Rep
+hab_counts$Rep
+
+#almost same thing
+hab_counts[["Rep"]]
+
+v<-"Rep"
+hab_counts$v ###wont work
+hab_counts[[v]] ##will work
+
+##subsetting new dataframe with columns
+hab_counts[c("Rep","Anem")]
+head(hab_counts[c("Rep","Anem")])
+new<-hab_counts[c("Rep","Anem")]
+new
+
+#exercise. what will the graph look like?
+plot(new$Anem~new$Rep)
+
+###
+#extracting rows
+###
+
+#always creates a new dataframe
