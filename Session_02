@@ -59,4 +59,43 @@ plot(new$Anem~new$Rep)
 ###
 
 #always creates a new dataframe
-hab_counts[,10]
+hab_counts[10,]
+hab_counts[3,]
+
+x<-hab_counts[3,]
+class(x)
+
+x<-hab_counts[1:3,]
+x
+
+#The above all index by name or by location (index). 
+#However, you generally want to avoid referencing by number in your saved code, e.g.:
+  
+x<- hab_counts[[5]]
+
+#This is because if you change the order of your spreadsheet 
+#(add or delete a column), everything that depends on data.height may change. 
+#You may also see people do this in their code.
+
+data.Amph <- data[,5]
+
+#This should really be avoided. By name is much more robust and 
+#easy to read later on, even if it is more typing at first.
+
+data.Amph <- hab_counts$Height
+data.height <- data[["Height"]]
+
+#Subset by index
+
+#==, !=
+
+hab_counts[hab_counts$Time==5,]
+time.5<-hab_counts[hab_counts$Time==5,]
+head(time.5)
+
+small.t5<-hab_counts[hab_counts$Time==5 & hab_counts$Size=="small",]
+head(small.t5)
+
+t5orlarge<-hab_counts[hab_counts$Time==5 | hab_counts$Size=="large",]
+t5orlarge
+
