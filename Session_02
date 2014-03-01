@@ -99,3 +99,8 @@ head(small.t5)
 t5orlarge<-hab_counts[hab_counts$Time==5 | hab_counts$Size=="large",]
 t5orlarge
 
+#deleting a column
+hab_counts$Rep<-NULL
+str(hab_counts)
+
+
