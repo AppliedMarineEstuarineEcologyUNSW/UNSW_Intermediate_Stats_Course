@@ -142,6 +142,63 @@ plot(values, absolutes)
 ########
 #NA's
 #######
+a <- c(1, 3, NA, 7, 9)
+sum(a)
+sum(a, na.rm­ = TRUE)­ 
+
+
+####
+#MATRICES
+####
+matrix(0, 3, 4)
+
+
+a <- 1:12
+matrix(a, 3, 4)
+
+plank<-1:8
+dim(plank) <- c(2, 4) 
+print(plank)
+
+matrix(1:25,5,5)
+
+##accesing a matrix
+print(plank)
+plank[2, 3]
+
+plank[1,4]
+
+##Assign multiple values
+plank[1,4]
+
+#access a whole row
+plank[2,]
+#access a whole column
+plank[, 4] 
+
+#mulitple columns
+plank[, 2:4]
+
+
+#####
+#PLOTTING MATRX DATA
+#####
+elevation <- matrix(1, 10, 10)
+elevation[4, 6] <- 0
+
+contour(elevation)
+persp(elevation)
+persp(elevation, expand=0.2)
+
+##working with sample data-matrices
+contour(volcano)
+persp(volcano, expand=0.2)
+image(volcano)
+
+#########
+#SUMMARY STATISTICS
+########
+
 
 
 
