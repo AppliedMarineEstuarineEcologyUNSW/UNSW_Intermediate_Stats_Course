@@ -59,3 +59,4 @@ plot(new$Anem~new$Rep)
 ###
 
 #always creates a new dataframe
+hab_counts[,10]
