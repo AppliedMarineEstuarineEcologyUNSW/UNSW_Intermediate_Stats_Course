@@ -68,4 +68,21 @@ ggplot(data,aes(temp,temp.seas))+geom_point(aes(colour =alt, size=alt))+
 ##Making a graph look pretty- theme options
 ggplot(data,aes(temp,temp.seas))+geom_point(aes(colour =alt, size=alt))+
   facet_grid(growthform~entered.by, scales="fixed")+
-  the
+  theme(panel.background =element_blank(),
+  panel.grid.minor = element_blank(),panel.border = element_blank())+
+  xlab("Temperature")+
+  ylab("Sea Surface Temperature")
+
+
+######
+#Saving graphics
+######
+
+pdf("Output/SST_Temp.pdf", height=8, width=8)
+ggplot(data,aes(temp,temp.seas))+geom_point(aes(colour =alt, size=alt))+
+  facet_grid(growthform~entered.by, scales="fixed")+
+  theme(panel.background =element_blank(),
+        panel.grid.minor = element_blank(),panel.border = element_blank())+
+  xlab("Temperature")+
+  ylab("Sea Surface Temperature")
+dev.off()
