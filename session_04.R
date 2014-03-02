@@ -42,4 +42,30 @@ par(mgp = c(3, 1, 0))
 plot(data$height~data$growthform, las=1, cex.axis=0.8, xlab="Growth Form",
      ylab="Height")
 
+###############
+#GGPLOT
+##############
 
+#A whole new grammer you need to learn. But don't worry it's designed to be very
+#easy to understand
+#
+
+library(ggplot2)
+
+qplot(growthform, height, data=data, geom=c("boxplot", "point"))
+ggplot(data, aes(growthform, height))+geom_boxplot()
+
+
+ggplot(data,aes(temp,temp.seas))+geom_point(aes(colour =alt, size=alt))+
+  facet_grid(.~growthform)
+ggplot(data,aes(temp,temp.seas))+geom_point(aes(colour =alt, size=alt))+
+  facet_grid(growthform~.)
+ggplot(data,aes(temp,temp.seas))+geom_point(aes(colour =alt, size=alt))+
+  facet_grid(growthform~entered.by)
+ggplot(data,aes(temp,temp.seas))+geom_point(aes(colour =alt, size=alt))+
+  facet_grid(growthform~entered.by, scales="free")
+
+##Making a graph look pretty- theme options
+ggplot(data,aes(temp,temp.seas))+geom_point(aes(colour =alt, size=alt))+
+  facet_grid(growthform~entered.by, scales="fixed")+
+  the
