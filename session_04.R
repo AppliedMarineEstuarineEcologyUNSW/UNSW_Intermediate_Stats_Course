@@ -86,3 +86,7 @@ ggplot(data,aes(temp,temp.seas))+geom_point(aes(colour =alt, size=alt))+
   xlab("Temperature")+
   ylab("Sea Surface Temperature")
 dev.off()
+
+#ggsave
+
+ggsave("Output/SST_Temp_smaller.pdf")
