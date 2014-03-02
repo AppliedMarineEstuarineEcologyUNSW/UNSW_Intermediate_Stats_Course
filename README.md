@@ -1,4 +1,4 @@
-UNSW_Intermediate_Stats_Course
+UNSW Intermediate Stats Course
 ==============================
 
 The code and expanation for the UNSW Short Intermediate Course on Statistics- DAY ONE: Introductory R for Complete Noobs
